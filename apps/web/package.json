@@ -8,8 +8,13 @@
 		"build": "vite build",
 		"serve": "vite preview",
 		"start": "vite",
+		"test": "echo 'No tests yet'",
 		"check-types": "tsc --noEmit",
 		"generate-pwa-assets": "pwa-assets-generator"
+	},
+	"peerDependencies": {
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^5.1.1",

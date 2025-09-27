@@ -1,4 +1,5 @@
 {
+	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"strict": true,
 		"esModuleInterop": true,
@@ -9,10 +10,16 @@
 		"verbatimModuleSyntax": true,
 		"skipLibCheck": true,
 		"types": ["vite/client"],
+		"lib": ["dom", "dom.iterable", "esnext"],
 		"rootDirs": ["."],
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./src/*"],
+			"@repo/ui": ["../../packages/ui/src/index.ts"],
+			"@repo/ui/components": ["../../packages/ui/src/components/index.ts"],
+			"@repo/ui/lib": ["../../packages/ui/src/lib/index.ts"]
 		}
-	}
+	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
 }
