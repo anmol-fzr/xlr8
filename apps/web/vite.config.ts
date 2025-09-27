@@ -23,13 +23,16 @@ export default defineConfig({
 		}),
 	],
 	optimizeDeps: {
-		include: ["@repo/ui"],
+		include: ["@xlr8/ui"],
 	},
 	resolve: {
 		alias: {
 			"@": path.resolve(__dirname, "./src"),
 			"@/components": path.resolve(__dirname, "./src/components/"),
-			"@repo/ui": path.resolve(__dirname, "../../packages/ui/src/"),
+			"@auth": path.resolve(__dirname, "./src/modules/auth/"),
+
+			// Monorepo Config
+			"@xlr8/ui": path.resolve(__dirname, "../../packages/ui/src/"),
 		},
 	},
 });

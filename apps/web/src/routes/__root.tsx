@@ -2,12 +2,9 @@ import {
 	createRootRouteWithContext,
 	HeadContent,
 	Outlet,
-	useRouterState,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
-import Header from "@/components/header";
-import Loader from "@/components/loader";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider, Toaster } from "@xlr8/ui/components";
 import "../index.css";
 
 export type RouterAppContext = {};
@@ -34,9 +31,9 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
 });
 
 function RootComponent() {
-	const isFetching = useRouterState({
-		select: (s) => s.isLoading,
-	});
+	// const isFetching = useRouterState({
+	// 	select: (s) => s.isLoading,
+	// });
 
 	return (
 		<>
@@ -47,13 +44,8 @@ function RootComponent() {
 				disableTransitionOnChange
 				storageKey="vite-ui-theme"
 			>
-				<div className="grid h-svh grid-rows-[auto_1fr]">
-					<Header />
-					{isFetching ? <Loader /> : <Outlet />}
-				</div>
-				{/*
+				<Outlet />
 				<Toaster richColors />
-        */}
 			</ThemeProvider>
 			<TanStackRouterDevtools position="bottom-left" />
 		</>

@@ -15,9 +15,12 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],
-			"@repo/ui": ["../../packages/ui/src/index.ts"],
-			"@repo/ui/components": ["../../packages/ui/src/components/index.ts"],
-			"@repo/ui/lib": ["../../packages/ui/src/lib/index.ts"]
+			"@auth/*": ["./src/modules/auth/*"],
+
+			// Monorepo Config
+			"@xlr8/ui": ["../../packages/ui/src/index.ts"],
+			"@xlr8/ui/components": ["../../packages/ui/src/components/index.ts"],
+			"@xlr8/ui/lib": ["../../packages/ui/src/lib/index.ts"]
 		}
 	},
 	"include": ["src"],
